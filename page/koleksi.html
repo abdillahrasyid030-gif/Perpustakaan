@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koleksi Buku | Perpustakaan Kampus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <input type="checkbox" id="nav-check-koleksi" class="nav-check">
+      <nav class="navbar">
+        <label for="nav-check-koleksi" class="nav-toggle" aria-label="Buka menu navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <a href="../index.html" class="logo">Perpustakaan Kampus</a>
+
+        <ul class="nav-menu">
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="koleksi.html" class="active" >Koleksi</a></li>          
+          <li><a href="peminjaman.html">Peminjaman</a></li>
+        </ul>        
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-intro">
+          <p class="hero-label">Katalog Buku</p>
+          <h1>Koleksi Buku Perpustakaan</h1>
+          <p>
+            Halaman ini menampilkan katalog buku perpustakaan berdasarkan kategori
+            dan informasi umum buku yang tersedia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="toolbar">
+          <form class="toolbar-search">
+            <input type="search" placeholder="Cari judul atau penulis...">
+            <button type="submit" class="btn-primary">Cari</button>
+          </form>
+
+          <div class="toolbar-side">
+            <label for="sort">Urutkan</label>
+            <select id="sort">
+              <option>Terbaru</option>
+              <option>Terlama</option>
+              <option>Terpopuler</option>
+              <option>Stok Terbanyak</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="category-chips">
+          <span class="category-chip active">Semua</span>
+          <span class="category-chip">Teknologi</span>
+          <span class="category-chip">Akademik</span>
+          <span class="category-chip">Desain</span>
+          <span class="category-chip">Jurnal</span>
+          <span class="category-chip">Fiksi</span>
+          <span class="category-chip">Non-Fiksi</span>
+        </div>
+
+        <p class="result-bar">Menampilkan 8 buku dari katalog perpustakaan.</p>
+
+        <div class="book-grid">
+          <article class="book-card">
+            <div class="book-image">
+              <img src="../image/pemrograman web dasar.png" alt="Pemrograman Web Dasar">
+              <span class="status tersedia">Tersedia</span>
+            </div>
+            <div class="book-content">
+              <p class="book-tag">Teknologi</p>
+              <h3>Pemrograman Web Dasar</h3>
+              <p class="author">Andi Pratama</p>
+              <div class="meta">
+                <span>Rak A1</span><span>Stok 12</span><span>2024</span><span>1.2k pembaca</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-image">
+              <img src="../image/basis data.png" alt="Basis Data Modern">
+              <span class="status dipinjam">Dipinjam</span>
+            </div>
+            <div class="book-content">
+              <p class="book-tag">Akademik</p>
+              <h3>Basis Data Modern</h3>
+              <p class="author">Rina Kurniawati</p>
+              <div class="meta">
+                <span>Rak B2</span><span>Stok 0</span><span>2023</span><span>980 pembaca</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-image">
+              <img src="../image/desain UIUX.png" alt="Desain UI Dasar">
+              <span class="status tersedia">Tersedia</span>
+            </div>
+            <div class="book-content">
+              <p class="book-tag">Desain</p>
+              <h3>Desain UI Dasar</h3>
+              <p class="author">Yoga Saputra</p>
+              <div class="meta">
+                <span>Rak C1</span><span>Stok 7</span><span>2024</span><span>860 pembaca</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-image">
+              <img src="../image/Logika Informatika.png" alt="Logika Informatika">
+              <span class="status tersedia">Tersedia</span>
+            </div>
+            <div class="book-content">
+              <p class="book-tag">Informatika</p>
+              <h3>Logika Informatika</h3>
+              <p class="author">Fajar Nugroho</p>
+              <div class="meta">
+                <span>Rak A3</span><span>Stok 5</span><span>2022</span><span>1.0k pembaca</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-image">
+              <img src="../image/algoritma dan struktur data.png" alt="Algoritma dan Struktur Data">
+              <span class="status tersedia">Tersedia</span>
+            </div>
+            <div class="book-content">
+              <p class="book-tag">Informatika</p>
+              <h3>Algoritma dan Struktur Data</h3>
+              <p class="author">Fajar Nugroho</p>
+              <div class="meta">
+                <span>Rak A2</span><span>Stok 9</span><span>2021</span><span>1.5k pembaca</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-image">
+              <img src="../image/buku manajemen perpustakaan.png" alt="Manajemen Perpustakaan">
+              <span class="status tersedia">Tersedia</span>
+            </div>
+            <div class="book-content">
+              <p class="book-tag">Non-Fiksi</p>
+              <h3>Manajemen Perpustakaan</h3>
+              <p class="author">Sari Handayani</p>
+              <div class="meta">
+                <span>Rak D2</span><span>Stok 8</span><span>2023</span><span>620 pembaca</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-image">
+              <img src="../image/AI.png" alt="Dasar Kecerdasan Buatan">
+              <span class="status dipinjam">Dipinjam</span>
+            </div>
+            <div class="book-content">
+              <p class="book-tag">Teknologi</p>
+              <h3>Dasar Kecerdasan Buatan</h3>
+              <p class="author">Dewi Lestari</p>
+              <div class="meta">
+                <span>Rak C3</span><span>Stok 0</span><span>2024</span><span>1.1k pembaca</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-image">
+              <img src="../image/jurnal SI.png" alt="Jurnal Sistem Informasi">
+              <span class="status tersedia">Tersedia</span>
+            </div>
+            <div class="book-content">
+              <p class="book-tag">Jurnal</p>
+              <h3>Jurnal Sistem Informasi</h3>
+              <p class="author">Tim Akademik</p>
+              <div class="meta">
+                <span>Rak J1</span><span>Stok 14</span><span>2024</span><span>740 pembaca</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Perpustakaan Kampus</h3>
+        <p>Informasi katalog buku disajikan secara sederhana dan responsif.</p>
+      </div>
+      <div>
+        <p>Email: perpustakaan@kampus.ac.id</p>
+        <p>Telepon: (061) 1234567</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Perpustakaan Kampus. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>

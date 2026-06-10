@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peminjaman Buku | Perpustakaan Kampus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <input type="checkbox" id="nav-check-peminjaman" class="nav-check">
+      <nav class="navbar">
+        <label for="nav-check-peminjaman" class="nav-toggle" aria-label="Buka menu navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <a href="../index.html" class="logo">Perpustakaan Kampus</a>
+
+        <ul class="nav-menu">
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="koleksi.html">Koleksi</a></li>
+          <li><a href="peminjaman.html" class="active">Peminjaman</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-intro">
+          <p class="hero-label">Layanan Peminjaman</p>
+          <h1>Form Peminjaman Buku</h1>
+          <p>
+            Halaman ini digunakan untuk menampilkan simulasi pengisian data peminjaman
+            buku oleh mahasiswa pada perpustakaan kampus.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container peminjaman-grid">
+        <div class="peminjaman-box">
+          <p class="section-label">Form Peminjaman</p>
+          <h2 class="peminjaman-title">Isi Data Peminjaman</h2>
+          <p class="peminjaman-desc">
+            Form ini bersifat statis dan digunakan untuk menampilkan layanan peminjaman
+            pada website perpustakaan.
+          </p>
+
+          <form class="form-card peminjaman-form-reset">
+            <div class="form-group">
+              <label for="nama">Nama Mahasiswa</label>
+              <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+            </div>
+
+            <div class="form-group">
+              <label for="nim">NIM</label>
+              <input type="text" id="nim" placeholder="Masukkan NIM">
+            </div>
+
+            <div class="form-group">
+              <label for="judul">Judul Buku</label>
+              <input type="text" id="judul" placeholder="Masukkan judul buku">
+            </div>
+
+            <div class="form-group">
+              <label for="kategori">Kategori Buku</label>
+              <select id="kategori">
+                <option>Pilih kategori</option>
+                <option>Teknologi</option>
+                <option>Akademik</option>
+                <option>Desain</option>
+                <option>Jurnal</option>
+                <option>Fiksi</option>
+                <option>Non-Fiksi</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tanggal">Tanggal Peminjaman</label>
+              <input type="date" id="tanggal">
+            </div>
+
+            <div class="form-group">
+              <label for="catatan">Catatan</label>
+              <textarea id="catatan" rows="5" placeholder="Tambahkan catatan peminjaman jika diperlukan"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Kirim Peminjaman</button>
+              <button type="reset" class="btn-secondary">Reset</button>
+            </div>
+
+            <p class="form-note">
+              Form ini hanya berupa simulasi tampilan tanpa proses penyimpanan data peminjaman.
+            </p>
+          </form>
+        </div>
+
+        <div class="info-stack">
+          <article class="info-card">
+            <h3>Ketentuan Peminjaman</h3>
+            <p>
+              Mahasiswa dapat meminjam buku sesuai ketentuan jumlah dan durasi peminjaman
+              yang berlaku.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Durasi Peminjaman</h3>
+            <p>
+              Durasi peminjaman buku ditetapkan selama 7 hari dan dapat diperpanjang
+              sesuai kebijakan perpustakaan.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Verifikasi</h3>
+            <p>
+              Data peminjaman akan diperiksa terlebih dahulu oleh petugas sebelum buku
+              dicatat sebagai dipinjam.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Catatan</h3>
+            <p>
+              Halaman ini ditambahkan sebagai pelengkap layanan peminjaman buku
+              pada website perpustakaan.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Perpustakaan Kampus</h3>
+        <p>Fitur peminjaman ditampilkan sebagai bagian dari layanan perpustakaan kampus.</p>
+      </div>
+      <div>
+        <p>Email: perpustakaan@kampus.ac.id</p>
+        <p>Telepon: (061) 1234567</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Perpustakaan Kampus. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>
