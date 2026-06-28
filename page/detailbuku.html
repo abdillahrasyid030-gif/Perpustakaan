@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koleksi Buku | Perpustakaan Kampus</title>
+    <title>Detail Buku | Perpustakaan Kampus</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,11 +17,11 @@
   <body>
     <header class="site-header">
       <div class="container nav-wrapper">
-        <input type="checkbox" id="nav-check-koleksi" class="nav-check" />
+        <input type="checkbox" id="nav-check-detail" class="nav-check" />
 
         <nav class="navbar">
           <label
-            for="nav-check-koleksi"
+            for="nav-check-detail"
             class="nav-toggle"
             aria-label="Buka menu navigasi"
           >
@@ -78,12 +78,13 @@
         </nav>
       </div>
     </header>
+
     <div class="notif-overlay" id="notifOverlay"></div>
 
     <section class="notif-popup" id="notifPopup" aria-label="Popup notifikasi">
       <div class="notif-header">
         <div>
-          <p class="notif-label">Pusat Informasi</p>
+          <p class="notif-label">Notifikasi</p>
           <h2>Notifikasi</h2>
         </div>
 
@@ -107,59 +108,119 @@
         </button>
       </div>
 
-      <!-- menampilkan notifikasi -->
+      <!--  menampilkan notifikasi -->
       <div class="notif-list" id="notifList">
         <p class="notif-empty">Tidak ada notifikasi</p>
       </div>
     </section>
     <main>
-      <section class="page-hero">
-        <div class="container">
-          <div class="page-intro">
-            <p class="hero-label">Katalog Buku</p>
-            <h1>Koleksi Buku Perpustakaan</h1>
-            <p>
-              Halaman ini menampilkan katalog buku perpustakaan berdasarkan
-              kategori dan informasi umum buku yang tersedia.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section class="content-section">
         <div class="container">
-          <div class="toolbar">
-            <form class="toolbar-search">
-              <input type="search" placeholder="Cari judul atau penulis..." />
-              <button type="submit" class="btn-primary">Cari</button>
-            </form>
+          <div class="detail-layout">
+            <aside class="detail-left">
+              <div class="detail-cover">
+                <img id="detailGambar" src="" alt="Cover buku" />
+              </div>
 
-            <div class="toolbar-side">
-              <label for="sort">Urutkan</label>
-              <select id="sort">
-                <option>Terbaru</option>
-                <option>Terlama</option>
-                <option>Terpopuler</option>
-                <option>Stok Terbanyak</option>
-              </select>
-            </div>
+              <div class="detail-action">
+                <p class="section-label">Ketersediaan Buku</p>
+                <h2 id="detailStatus">Tersedia</h2>
+                <p id="detailStok">Stok buku tersedia</p>
+
+                <a
+                  href="peminjaman.html"
+                  class="btn-primary detail-btn"
+                  id="btnPinjamDetail"
+                  >Pinjam Sekarang</a
+                >
+                <a href="../index.html" class="btn-secondary detail-btn"
+                  >Kembali</a
+                >
+              </div>
+            </aside>
+
+            <section class="detail-content">
+              <!-- kode untuk menampilkan data buku -->
+              <div class="book-grid" id="koleksiGrid"></div>
+              <p class="section-label" id="detailKategori">Kategori</p>
+              <h1 id="detailJudul">Judul Buku</h1>
+              <p class="detail-jenis" id="detailJenis">Jenis Buku</p>
+              <div class="detail-meta-top">
+                <span id="detailPenulis">Nama Penulis</span>
+                <span id="detailRak">Rak Buku</span>
+              </div>
+              <div class="detail-tag-list" id="detailTagList"></div>
+
+              <div class="detail-sinopsis">
+                <h2>Sinopsis</h2>
+                <p id="detailSinopsis">
+                  Sinopsis buku akan ditampilkan pada bagian ini.
+                </p>
+              </div>
+
+              <div class="detail-karakteristik">
+                <h2>Karakteristik Isi Buku</h2>
+                <ul id="detailKarakteristik">
+                  <li>Karakteristik buku akan ditampilkan pada bagian ini.</li>
+                </ul>
+              </div>
+
+              <div class="detail-info">
+                <div>
+                  <span>Tahun Terbit</span>
+                  <strong id="detailTahun">2024</strong>
+                </div>
+                <div>
+                  <span>Jumlah Pembaca</span>
+                  <strong id="detailPembaca">0 pembaca</strong>
+                </div>
+                <div>
+                  <span>Letak Rak</span>
+                  <strong id="detailRakInfo">Rak</strong>
+                </div>
+                <div>
+                  <span>Status</span>
+                  <strong id="detailStatusInfo">Tersedia</strong>
+                </div>
+              </div>
+
+              <section class="book-section detail-related">
+                <div class="section-header">
+                  <div>
+                    <p class="section-label">Rekomendasi</p>
+                    <h2>Buku Terkait</h2>
+                  </div>
+                  <a href="koleksi.html" class="section-link">Lihat Semua</a>
+                </div>
+
+                <div class="related-grid">
+                  <article class="related-card">
+                    <img src="../image/desain UIUX.png" alt="Desain UI Dasar" />
+                    <h3>Desain UI Dasar</h3>
+                    <p>Yoga Saputra</p>
+                  </article>
+
+                  <article class="related-card">
+                    <img
+                      src="../image/basis data.png"
+                      alt="Basis Data Modern"
+                    />
+                    <h3>Basis Data Modern</h3>
+                    <p>Rina Kurniawati</p>
+                  </article>
+
+                  <article class="related-card">
+                    <img
+                      src="../image/algoritma dan struktur data.png"
+                      alt="Algoritma dan Struktur Data"
+                    />
+                    <h3>Algoritma dan Struktur Data</h3>
+                    <p>Fajar Nugroho</p>
+                  </article>
+                </div>
+              </section>
+            </section>
           </div>
-
-          <div class="category-chips">
-            <span class="category-chip active">Semua</span>
-            <span class="category-chip">Teknologi</span>
-            <span class="category-chip">Akademik</span>
-            <span class="category-chip">Desain</span>
-            <span class="category-chip">Jurnal</span>
-            <span class="category-chip">Fiksi</span>
-            <span class="category-chip">Non-Fiksi</span>
-          </div>
-
-          <p class="result-bar">
-            Menampilkan daftar buku yang tersedia di perpustakaan.
-          </p>
-          <!-- kode untuk menampilkan data buku  -->
-          <div class="book-grid" id="koleksiGrid"></div>
         </div>
       </section>
     </main>
@@ -168,9 +229,7 @@
       <div class="container footer-content">
         <div>
           <h3>Perpustakaan Kampus</h3>
-          <p>
-            Informasi katalog buku disajikan secara sederhana dan responsif.
-          </p>
+          <p>Website informasi koleksi buku dan layanan perpustakaan kampus.</p>
         </div>
         <div>
           <p>Email: perpustakaan@kampus.ac.id</p>

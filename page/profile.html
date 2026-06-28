@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koleksi Buku | Perpustakaan Kampus</title>
+    <title>Profile User | Perpustakaan Kampus</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,14 +14,15 @@
     <link rel="icon" type="image/png" href="../image/logo.png" />
     <link rel="stylesheet" href="../style/style.css" />
   </head>
+
   <body>
     <header class="site-header">
       <div class="container nav-wrapper">
-        <input type="checkbox" id="nav-check-koleksi" class="nav-check" />
+        <input type="checkbox" id="nav-check-profile" class="nav-check" />
 
         <nav class="navbar">
           <label
-            for="nav-check-koleksi"
+            for="nav-check-profile"
             class="nav-toggle"
             aria-label="Buka menu navigasi"
           >
@@ -34,7 +35,7 @@
 
           <ul class="nav-menu nav-menu-main">
             <li><a href="../index.html">Beranda</a></li>
-            <li><a href="koleksi.html" class="active">Koleksi</a></li>
+            <li><a href="koleksi.html">Koleksi</a></li>
             <li><a href="peminjaman.html">Peminjaman</a></li>
           </ul>
 
@@ -61,7 +62,7 @@
             <li>
               <a
                 href="profile.html"
-                class="nav-icon-link"
+                class="nav-icon-link active"
                 title="Profile"
                 aria-label="Buka profile"
               >
@@ -78,6 +79,7 @@
         </nav>
       </div>
     </header>
+
     <div class="notif-overlay" id="notifOverlay"></div>
 
     <section class="notif-popup" id="notifPopup" aria-label="Popup notifikasi">
@@ -107,59 +109,127 @@
         </button>
       </div>
 
-      <!-- menampilkan notifikasi -->
+      <!--  menampilkan notifikasi -->
       <div class="notif-list" id="notifList">
         <p class="notif-empty">Tidak ada notifikasi</p>
       </div>
     </section>
+
     <main>
-      <section class="page-hero">
+      <section class="content-section profile-dashboard-page">
         <div class="container">
-          <div class="page-intro">
-            <p class="hero-label">Katalog Buku</p>
-            <h1>Koleksi Buku Perpustakaan</h1>
-            <p>
-              Halaman ini menampilkan katalog buku perpustakaan berdasarkan
-              kategori dan informasi umum buku yang tersedia.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <div class="container">
-          <div class="toolbar">
-            <form class="toolbar-search">
-              <input type="search" placeholder="Cari judul atau penulis..." />
-              <button type="submit" class="btn-primary">Cari</button>
-            </form>
-
-            <div class="toolbar-side">
-              <label for="sort">Urutkan</label>
-              <select id="sort">
-                <option>Terbaru</option>
-                <option>Terlama</option>
-                <option>Terpopuler</option>
-                <option>Stok Terbanyak</option>
-              </select>
+          <section class="profile-hero-card">
+            <div class="profile-avatar-box">
+              <div class="profile-photo" id="profileInisial">PK</div>
+              <span class="profile-badge">✓</span>
             </div>
-          </div>
 
-          <div class="category-chips">
-            <span class="category-chip active">Semua</span>
-            <span class="category-chip">Teknologi</span>
-            <span class="category-chip">Akademik</span>
-            <span class="category-chip">Desain</span>
-            <span class="category-chip">Jurnal</span>
-            <span class="category-chip">Fiksi</span>
-            <span class="category-chip">Non-Fiksi</span>
-          </div>
+            <div class="profile-main-info">
+              <h1 id="profileNama">Mahasiswa Perpustakaan</h1>
 
-          <p class="result-bar">
-            Menampilkan daftar buku yang tersedia di perpustakaan.
-          </p>
-          <!-- kode untuk menampilkan data buku  -->
-          <div class="book-grid" id="koleksiGrid"></div>
+              <div class="profile-user-meta">
+                <span id="profileNim">2026000001</span>
+                <span id="profileProdi">Sistem Informasi</span>
+              </div>
+
+              <p id="profileBio">
+                Anggota perpustakaan kampus yang aktif menggunakan layanan
+                peminjaman dan koleksi buku digital.
+              </p>
+
+              <div class="profile-action-row">
+                <button type="button" class="btn-primary" id="btnLogout">
+                  Logout
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="profile-content-grid">
+            <div class="profile-left-content">
+              <div class="profile-section-title">
+                <h2>Buku yang Sedang Dipinjam</h2>
+                <span id="profileJumlahAktif">0 Aktif</span>
+              </div>
+
+              <div class="profile-loan-grid" id="profileBukuAktifList">
+                <div class="profile-empty-state">
+                  Belum ada buku yang sedang dipinjam.
+                </div>
+              </div>
+            </div>
+
+            <aside class="profile-right-content">
+              <section class="profile-side-card">
+                <div class="profile-side-title">
+                  <h2>Riwayat Peminjaman</h2>
+                </div>
+
+                <!-- menampilkan data riwayat yang disimpan di localstorage -->
+                <div class="profile-history-list" id="profileRiwayatList">
+                  <div class="profile-empty-state">
+                    Belum ada riwayat peminjaman.
+                  </div>
+                </div>
+
+                <a href="riwayat.html" class="profile-history-link">
+                  Lihat Semua Riwayat
+                </a>
+              </section>
+
+              <section class="profile-achievement-card">
+                <h3>Pencapaian Pembaca</h3>
+
+                <div class="profile-achievement-content">
+                  <div
+                    class="profile-achievement-number"
+                    id="profileDikembalikan"
+                  >
+                    0
+                  </div>
+
+                  <div>
+                    <p>Buku Selesai Dipinjam</p>
+                    <div class="profile-progress">
+                      <span id="profileProgressBar"></span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </aside>
+          </section>
+
+          <section class="profile-summary-grid">
+            <div class="profile-summary-card">
+              <span>Total Kunjungan</span>
+              <strong id="profileKunjungan">0</strong>
+            </div>
+
+            <div class="profile-summary-card">
+              <span>Total Peminjaman</span>
+              <strong id="profilePeminjaman">0</strong>
+            </div>
+
+            <div class="profile-summary-card">
+              <span>Total EXP</span>
+              <strong id="profileExp">0 EXP</strong>
+            </div>
+
+            <div class="profile-summary-card">
+              <span>Level User</span>
+              <strong id="profileLevel">Level 1</strong>
+            </div>
+
+            <div class="profile-summary-card">
+              <span>Denda Aktif</span>
+              <strong id="profileDenda">Rp 0</strong>
+            </div>
+
+            <div class="profile-summary-card">
+              <span>Reward</span>
+              <strong id="profileReward">Belum Aktif</strong>
+            </div>
+          </section>
         </div>
       </section>
     </main>
@@ -169,18 +239,22 @@
         <div>
           <h3>Perpustakaan Kampus</h3>
           <p>
-            Informasi katalog buku disajikan secara sederhana dan responsif.
+            Profile digunakan untuk menampilkan data aktivitas pengguna
+            perpustakaan.
           </p>
         </div>
+
         <div>
           <p>Email: perpustakaan@kampus.ac.id</p>
           <p>Telepon: (061) 1234567</p>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; 2026 Perpustakaan Kampus. Seluruh hak cipta dilindungi.</p>
       </div>
     </footer>
+
     <script src="../js/data.js"></script>
     <script src="../js/scripts.js"></script>
   </body>

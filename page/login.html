@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Perpustakaan Kampus</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="../image/logo.png" />
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <section class="auth-section auth-split-section">
+        <div class="container">
+          <div class="auth-split-card">
+            <aside class="auth-image-side auth-login-bg">
+              <div class="auth-image-content">
+                <p class="auth-image-label">Perpustakaan Kampus</p>
+
+                <h2>Selamat Datang Kembali</h2>
+
+                <p>
+                  Masuk ke sistem perpustakaan untuk melihat koleksi buku,
+                  memantau peminjaman, menulis review, dan mengumpulkan EXP dari
+                  aktivitas membaca.
+                </p>
+              </div>
+            </aside>
+
+            <section class="auth-form-side">
+              <div class="auth-card auth-card-split">
+                <h1>Masuk ke Akun</h1>
+                <p>
+                  Gunakan NIM dan password yang sudah dibuat pada halaman
+                  registrasi.
+                </p>
+
+                <form id="formLogin">
+                  <div class="form-group">
+                    <label for="loginNim">NIM</label>
+                    <input
+                      type="text"
+                      id="loginNim"
+                      placeholder="Masukkan NIM"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input
+                      type="password"
+                      id="loginPassword"
+                      placeholder="Masukkan password"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="submit" class="btn-primary">Login</button>
+                  </div>
+
+                  <p class="auth-link">
+                    Belum memiliki akun?
+                    <a href="register.html">Daftar sekarang</a>
+                  </p>
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <h3>Perpustakaan Kampus</h3>
+          <p>
+            Login digunakan untuk simulasi akses user pada sistem perpustakaan.
+          </p>
+        </div>
+
+        <div>
+          <p>Email: perpustakaan@kampus.ac.id</p>
+          <p>Telepon: (061) 1234567</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Perpustakaan Kampus. Seluruh hak cipta dilindungi.</p>
+      </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/scripts.js"></script>
+  </body>
+</html>

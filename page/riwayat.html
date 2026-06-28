@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koleksi Buku | Perpustakaan Kampus</title>
+    <title>Riwayat Peminjaman | Perpustakaan Kampus</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,14 +14,15 @@
     <link rel="icon" type="image/png" href="../image/logo.png" />
     <link rel="stylesheet" href="../style/style.css" />
   </head>
+
   <body>
     <header class="site-header">
       <div class="container nav-wrapper">
-        <input type="checkbox" id="nav-check-koleksi" class="nav-check" />
+        <input type="checkbox" id="nav-check-riwayat" class="nav-check" />
 
         <nav class="navbar">
           <label
-            for="nav-check-koleksi"
+            for="nav-check-riwayat"
             class="nav-toggle"
             aria-label="Buka menu navigasi"
           >
@@ -34,7 +35,7 @@
 
           <ul class="nav-menu nav-menu-main">
             <li><a href="../index.html">Beranda</a></li>
-            <li><a href="koleksi.html" class="active">Koleksi</a></li>
+            <li><a href="koleksi.html">Koleksi</a></li>
             <li><a href="peminjaman.html">Peminjaman</a></li>
           </ul>
 
@@ -78,6 +79,7 @@
         </nav>
       </div>
     </header>
+
     <div class="notif-overlay" id="notifOverlay"></div>
 
     <section class="notif-popup" id="notifPopup" aria-label="Popup notifikasi">
@@ -107,59 +109,92 @@
         </button>
       </div>
 
-      <!-- menampilkan notifikasi -->
       <div class="notif-list" id="notifList">
         <p class="notif-empty">Tidak ada notifikasi</p>
       </div>
     </section>
+
     <main>
-      <section class="page-hero">
+      <section class="riwayat-page">
         <div class="container">
-          <div class="page-intro">
-            <p class="hero-label">Katalog Buku</p>
-            <h1>Koleksi Buku Perpustakaan</h1>
+          <div class="riwayat-page-heading">
+            <p class="section-label">Riwayat</p>
+            <h1>Riwayat Peminjaman</h1>
             <p>
-              Halaman ini menampilkan katalog buku perpustakaan berdasarkan
-              kategori dan informasi umum buku yang tersedia.
+              Pantau semua data peminjaman buku, status pengembalian, denda, dan
+              hasil review buku yang pernah dilakukan.
             </p>
           </div>
-        </div>
-      </section>
 
-      <section class="content-section">
-        <div class="container">
-          <div class="toolbar">
-            <form class="toolbar-search">
-              <input type="search" placeholder="Cari judul atau penulis..." />
-              <button type="submit" class="btn-primary">Cari</button>
-            </form>
+          <div class="riwayat-stats-grid">
+            <div class="riwayat-stat-card">
+              <span>Total Buku Dipinjam</span>
+              <strong id="riwayatTotalPinjam">0</strong>
+            </div>
 
-            <div class="toolbar-side">
-              <label for="sort">Urutkan</label>
-              <select id="sort">
-                <option>Terbaru</option>
-                <option>Terlama</option>
-                <option>Terpopuler</option>
-                <option>Stok Terbanyak</option>
-              </select>
+            <div class="riwayat-stat-card">
+              <span>Selesai</span>
+              <strong id="riwayatTotalSelesai">0</strong>
+            </div>
+
+            <div class="riwayat-stat-card">
+              <span>Aktif</span>
+              <strong id="riwayatTotalAktif">0</strong>
+            </div>
+
+            <div class="riwayat-stat-card danger">
+              <span>Terlambat</span>
+              <strong id="riwayatTotalTerlambat">0</strong>
             </div>
           </div>
 
-          <div class="category-chips">
-            <span class="category-chip active">Semua</span>
-            <span class="category-chip">Teknologi</span>
-            <span class="category-chip">Akademik</span>
-            <span class="category-chip">Desain</span>
-            <span class="category-chip">Jurnal</span>
-            <span class="category-chip">Fiksi</span>
-            <span class="category-chip">Non-Fiksi</span>
-          </div>
+          <section class="riwayat-table-card">
+            <div class="riwayat-toolbar">
+              <form class="riwayat-search" id="formCariRiwayat">
+                <input
+                  type="search"
+                  id="riwayatSearchInput"
+                  placeholder="Cari judul buku atau kategori..."
+                />
+              </form>
 
-          <p class="result-bar">
-            Menampilkan daftar buku yang tersedia di perpustakaan.
-          </p>
-          <!-- kode untuk menampilkan data buku  -->
-          <div class="book-grid" id="koleksiGrid"></div>
+              <div class="riwayat-toolbar-actions">
+                <a href="profile.html" class="btn-primary">
+                  Kembali ke Profile
+                </a>
+              </div>
+            </div>
+
+            <div class="riwayat-table-wrapper">
+              <table class="riwayat-table">
+                <thead>
+                  <tr>
+                    <th>Buku</th>
+                    <th>Tanggal Pinjam</th>
+                    <th>Tanggal Kembali</th>
+                    <th>Status</th>
+                    <th>Review</th>
+                    <th>Denda</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+
+                <tbody id="riwayatTableBody">
+                  <tr>
+                    <td colspan="7" class="table-empty">
+                      Data riwayat peminjaman belum tersedia.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="riwayat-table-footer">
+              <p id="riwayatInfoJumlah">
+                Menampilkan data riwayat peminjaman user.
+              </p>
+            </div>
+          </section>
         </div>
       </section>
     </main>
@@ -169,18 +204,22 @@
         <div>
           <h3>Perpustakaan Kampus</h3>
           <p>
-            Informasi katalog buku disajikan secara sederhana dan responsif.
+            Riwayat digunakan untuk melihat aktivitas peminjaman dan review
+            buku.
           </p>
         </div>
+
         <div>
           <p>Email: perpustakaan@kampus.ac.id</p>
           <p>Telepon: (061) 1234567</p>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; 2026 Perpustakaan Kampus. Seluruh hak cipta dilindungi.</p>
       </div>
     </footer>
+
     <script src="../js/data.js"></script>
     <script src="../js/scripts.js"></script>
   </body>

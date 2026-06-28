@@ -1,163 +1,336 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peminjaman Buku | Perpustakaan Kampus</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peminjaman Buku | Perpustakaan Kampus</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="../image/logo.png" />
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
 
-  <link rel="stylesheet" href="../style/style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav-wrapper">
-      <input type="checkbox" id="nav-check-peminjaman" class="nav-check">
-      <nav class="navbar">
-        <label for="nav-check-peminjaman" class="nav-toggle" aria-label="Buka menu navigasi">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <input type="checkbox" id="nav-check-peminjaman" class="nav-check" />
 
-        <a href="../index.html" class="logo">Perpustakaan Kampus</a>
+        <nav class="navbar">
+          <label
+            for="nav-check-peminjaman"
+            class="nav-toggle"
+            aria-label="Buka menu navigasi"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
 
-        <ul class="nav-menu">
-          <li><a href="../index.html">Beranda</a></li>
-          <li><a href="koleksi.html">Koleksi</a></li>
-          <li><a href="peminjaman.html" class="active">Peminjaman</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+          <a href="../index.html" class="logo">Perpustakaan Kampus</a>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="page-intro">
-          <p class="hero-label">Layanan Peminjaman</p>
-          <h1>Form Peminjaman Buku</h1>
+          <ul class="nav-menu nav-menu-main">
+            <li><a href="../index.html">Beranda</a></li>
+            <li><a href="koleksi.html">Koleksi</a></li>
+            <li><a href="peminjaman.html" class="active">Peminjaman</a></li>
+          </ul>
+
+          <ul class="nav-menu nav-menu-actions">
+            <li>
+              <button
+                type="button"
+                class="nav-icon-link"
+                id="btnNotif"
+                title="Notifikasi"
+                aria-label="Buka notifikasi"
+              >
+                <span class="nav-svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path
+                      d="M320 64C306.7 64 296 74.7 296 88L296 97.7C214.6 109.3 152 179.4 152 264L152 278.5C152 316.2 142 353.2 123 385.8L101.1 423.2C97.8 429 96 435.5 96 442.2C96 463.1 112.9 480 133.8 480L506.2 480C527.1 480 544 463.1 544 442.2C544 435.5 542.2 428.9 538.9 423.2L517 385.7C498 353.1 488 316.1 488 278.4L488 263.9C488 179.3 425.4 109.2 344 97.6L344 87.9C344 74.6 333.3 63.9 320 63.9zM488.4 432L151.5 432L164.4 409.9C187.7 370 200 324.6 200 278.5L200 264C200 197.7 253.7 144 320 144C386.3 144 440 197.7 440 264L440 278.5C440 324.7 452.3 370 475.5 409.9L488.4 432zM252.1 528C262 556 288.7 576 320 576C351.3 576 378 556 387.9 528L252.1 528z"
+                    />
+                  </svg>
+                </span>
+                <span class="notif-badge" id="notifBadge">0</span>
+              </button>
+            </li>
+
+            <li>
+              <a
+                href="profile.html"
+                class="nav-icon-link"
+                title="Profile"
+                aria-label="Buka profile"
+              >
+                <span class="nav-svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path
+                      d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112 562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="notif-overlay" id="notifOverlay"></div>
+
+    <section class="notif-popup" id="notifPopup" aria-label="Popup notifikasi">
+      <div class="notif-header">
+        <div>
+          <p class="notif-label">Pusat Informasi</p>
+          <h2>Notifikasi</h2>
+        </div>
+
+        <button
+          type="button"
+          id="btnRefreshNotif"
+          class="notif-refresh"
+          aria-label="Muat ulang notifikasi"
+        >
+          ↻
+        </button>
+      </div>
+
+      <div class="notif-tabs">
+        <button type="button" class="notif-tab active" data-filter="semua">
+          Semua
+        </button>
+
+        <button type="button" class="notif-tab" data-filter="belum">
+          Belum Dibaca
+        </button>
+      </div>
+
+      <!--  menampilkan notifikasi -->
+      <div class="notif-list" id="notifList">
+        <p class="notif-empty">Tidak ada notifikasi</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="content-section loan-v2-page">
+        <div class="container">
+          <div class="loan-v2-layout">
+            <div class="loan-v2-main">
+              <div class="loan-v2-heading">
+                <h1>Pengajuan Peminjaman Buku</h1>
+                <p>
+                  Ajukan peminjaman buku perpustakaan secara digital. Data yang
+                  dikirim akan masuk ke tabel peminjaman dan menunggu proses
+                  persetujuan.
+                </p>
+              </div>
+
+              <section class="loan-v2-form-card">
+                <form id="formPeminjaman">
+                  <div class="loan-v2-form-grid">
+                    <div class="form-group">
+                      <label for="nama">Nama Mahasiswa</label>
+                      <input
+                        type="text"
+                        id="nama"
+                        placeholder="Masukkan nama lengkap"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="nim">NIM</label>
+                      <input
+                        type="text"
+                        id="nim"
+                        placeholder="Masukkan NIM"
+                        minlength="8"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="kategori">Kategori Buku</label>
+                      <select id="kategori" required>
+                        <option value="Semua">Semua</option>
+                        <option value="Teknologi">Teknologi</option>
+                        <option value="Akademik">Akademik</option>
+                        <option value="Desain">Desain</option>
+                        <option value="Informatika">Informatika</option>
+                        <option value="Jurnal">Jurnal</option>
+                        <option value="Non-Fiksi">Non-Fiksi</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="judul">Judul Buku</label>
+                      <input
+                        type="text"
+                        id="judul"
+                        placeholder="Ketik judul buku"
+                        autocomplete="off"
+                        required
+                      />
+
+                      <!-- saran buku ditampilkan sesuai kategori -->
+                      <div class="saran-buku-list" id="saranBukuList"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="tanggal">Tanggal Peminjaman</label>
+                      <input
+                        type="date"
+                        id="tanggal"
+                        class="tanggal-readonly"
+                        readonly
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="tanggalKembaliPreview">Tanggal Kembali</label>
+                      <input
+                        type="text"
+                        id="tanggalKembaliPreview"
+                        class="tanggal-readonly"
+                        placeholder="Otomatis +7 hari"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <div class="loan-v2-form-actions">
+                    <button type="reset" class="btn-secondary">Reset</button>
+
+                    <button
+                      type="submit"
+                      class="btn-primary"
+                      id="btnSimpanPeminjaman"
+                    >
+                      Kirim Peminjaman
+                    </button>
+                  </div>
+                </form>
+              </section>
+            </div>
+
+            <aside class="loan-v2-sidebar">
+              <section class="loan-v2-summary-card">
+                <h2>Ringkasan Peminjaman</h2>
+
+                <div class="loan-v2-summary-list">
+                  <div>
+                    <span>Durasi</span>
+                    <strong id="loanDurasiInfo">7 Hari</strong>
+                  </div>
+
+                  <div>
+                    <span>Maksimal Pinjam</span>
+                    <strong id="loanMaksimalInfo">1 Buku</strong>
+                  </div>
+
+                  <div>
+                    <span>Denda Terlambat</span>
+                    <strong id="loanDendaInfo">Rp 1.000 / Hari</strong>
+                  </div>
+
+                  <div>
+                    <span>Persetujuan</span>
+                    <strong id="loanTimerInfo">30 Detik</strong>
+                  </div>
+                </div>
+              </section>
+
+              <section class="loan-v2-process-card">
+                <h3>Proses Verifikasi</h3>
+
+                <div class="loan-v2-process-list">
+                  <div>
+                    <span>1</span>
+                    <p>Data peminjaman dikirim melalui form.</p>
+                  </div>
+
+                  <div>
+                    <span>2</span>
+                    <p>Status awal menjadi menunggu persetujuan.</p>
+                  </div>
+
+                  <div>
+                    <span>3</span>
+                    <p>Sistem menyetujui peminjaman secara otomatis.</p>
+                  </div>
+
+                  <div>
+                    <span>4</span>
+                    <p>Buku dikembalikan sesuai tanggal kembali.</p>
+                  </div>
+                </div>
+              </section>
+            </aside>
+
+            <section class="loan-v2-table-section">
+              <div class="loan-v2-table-card">
+                <div class="loan-v2-table-header">
+                  <h2>Data Peminjaman Buku</h2>
+                </div>
+
+                <div class="loan-v2-table-wrapper">
+                  <table class="loan-v2-table">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Judul Buku</th>
+                        <th>Kategori</th>
+                        <th>Tanggal Pinjam</th>
+                        <th>Tanggal Kembali</th>
+                        <th>Status</th>
+                        <th>Denda</th>
+                        <th>Aksi</th>
+                      </tr>
+                    </thead>
+
+                    <tbody id="tabelPeminjamanBody">
+                      <tr>
+                        <td colspan="8" class="table-empty">
+                          Belum ada data peminjaman.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <h3>Perpustakaan Kampus</h3>
           <p>
-            Halaman ini digunakan untuk menampilkan simulasi pengisian data peminjaman
-            buku oleh mahasiswa pada perpustakaan kampus.
+            Fitur peminjaman digunakan untuk mengajukan pinjaman buku dan
+            memantau status peminjaman.
           </p>
         </div>
-      </div>
-    </section>
 
-    <section class="content-section">
-      <div class="container peminjaman-grid">
-        <div class="peminjaman-box">
-          <p class="section-label">Form Peminjaman</p>
-          <h2 class="peminjaman-title">Isi Data Peminjaman</h2>
-          <p class="peminjaman-desc">
-            Form ini bersifat statis dan digunakan untuk menampilkan layanan peminjaman
-            pada website perpustakaan.
-          </p>
-
-          <form class="form-card peminjaman-form-reset">
-            <div class="form-group">
-              <label for="nama">Nama Mahasiswa</label>
-              <input type="text" id="nama" placeholder="Masukkan nama lengkap">
-            </div>
-
-            <div class="form-group">
-              <label for="nim">NIM</label>
-              <input type="text" id="nim" placeholder="Masukkan NIM">
-            </div>
-
-            <div class="form-group">
-              <label for="judul">Judul Buku</label>
-              <input type="text" id="judul" placeholder="Masukkan judul buku">
-            </div>
-
-            <div class="form-group">
-              <label for="kategori">Kategori Buku</label>
-              <select id="kategori">
-                <option>Pilih kategori</option>
-                <option>Teknologi</option>
-                <option>Akademik</option>
-                <option>Desain</option>
-                <option>Jurnal</option>
-                <option>Fiksi</option>
-                <option>Non-Fiksi</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="tanggal">Tanggal Peminjaman</label>
-              <input type="date" id="tanggal">
-            </div>
-
-            <div class="form-group">
-              <label for="catatan">Catatan</label>
-              <textarea id="catatan" rows="5" placeholder="Tambahkan catatan peminjaman jika diperlukan"></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn-primary">Kirim Peminjaman</button>
-              <button type="reset" class="btn-secondary">Reset</button>
-            </div>
-
-            <p class="form-note">
-              Form ini hanya berupa simulasi tampilan tanpa proses penyimpanan data peminjaman.
-            </p>
-          </form>
-        </div>
-
-        <div class="info-stack">
-          <article class="info-card">
-            <h3>Ketentuan Peminjaman</h3>
-            <p>
-              Mahasiswa dapat meminjam buku sesuai ketentuan jumlah dan durasi peminjaman
-              yang berlaku.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <h3>Durasi Peminjaman</h3>
-            <p>
-              Durasi peminjaman buku ditetapkan selama 7 hari dan dapat diperpanjang
-              sesuai kebijakan perpustakaan.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <h3>Verifikasi</h3>
-            <p>
-              Data peminjaman akan diperiksa terlebih dahulu oleh petugas sebelum buku
-              dicatat sebagai dipinjam.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <h3>Catatan</h3>
-            <p>
-              Halaman ini ditambahkan sebagai pelengkap layanan peminjaman buku
-              pada website perpustakaan.
-            </p>
-          </article>
+        <div>
+          <p>Email: perpustakaan@kampus.ac.id</p>
+          <p>Telepon: (061) 1234567</p>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <div>
-        <h3>Perpustakaan Kampus</h3>
-        <p>Fitur peminjaman ditampilkan sebagai bagian dari layanan perpustakaan kampus.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Perpustakaan Kampus. Seluruh hak cipta dilindungi.</p>
       </div>
-      <div>
-        <p>Email: perpustakaan@kampus.ac.id</p>
-        <p>Telepon: (061) 1234567</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Perpustakaan Kampus. Seluruh hak cipta dilindungi.</p>
-    </div>
-  </footer>
-</body>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/scripts.js"></script>
+  </body>
 </html>
