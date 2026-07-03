@@ -247,6 +247,8 @@ Data tampil di Profile dan Riwayat
 4. Login menggunakan salah satu akun dummy.
 5. Setelah login berhasil, user dapat mengakses menu website.
 
+> 💡 Disarankan menggunakan browser versi terbaru seperti Google Chrome atau Microsoft Edge agar seluruh fitur berjalan dengan optimal.
+
 ---
 
 ## 🧹 Cara Reset Data Demo
@@ -277,3 +279,5 @@ Jika dikembangkan lebih lanjut, sistem ini dapat ditambahkan backend, database, 
 Website **Perpustakaan Kampus** dibuat untuk mensimulasikan sistem perpustakaan digital secara sederhana dan mudah dipahami. Sistem ini tidak hanya menampilkan koleksi buku, tetapi juga memiliki alur peminjaman, persetujuan otomatis 30 detik, pengembalian, denda, review buku, EXP, level, profile, notifikasi, dan riwayat peminjaman.
 
 Dengan alur tersebut, sistem ini sudah cukup untuk digunakan sebagai demonstrasi awal sistem informasi perpustakaan berbasis web.
+
+Proyek ini dikembangkan sebagai media pembelajaran dan implementasi sistem informasi perpustakaan berbasis web menggunakan HTML, CSS, dan JavaScript.

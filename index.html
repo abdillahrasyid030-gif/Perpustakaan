@@ -1,354 +1,314 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website Perpustakaan Kampus</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="image/logo.png" />
-    <link rel="stylesheet" href="style/style.css" />
-    <script>
-      // mengarahkan halaman login
-      if (!localStorage.getItem("akunLoginPerpustakaan")) {
-        window.location.replace("page/login.html");
-      }
-    </script>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-wrapper">
-        <input type="checkbox" id="nav-check-index" class="nav-check" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Perpustakaan Kampus</title>
 
-        <nav class="navbar">
-          <label
-            for="nav-check-index"
-            class="nav-toggle"
-            aria-label="Buka menu navigasi"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="image/logo.png" />
+  <link rel="stylesheet" href="style/style.css" />
+  <script>
+    // mengarahkan halaman login
+    if (!localStorage.getItem("akunLoginPerpustakaan")) {
+      window.location.replace("page/login.html");
+    }
+  </script>
+</head>
 
-          <a href="index.html" class="logo">Perpustakaan Kampus</a>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <input type="checkbox" id="nav-check-index" class="nav-check" />
 
-          <ul class="nav-menu nav-menu-main">
-            <li><a href="index.html" class="active">Beranda</a></li>
-            <li><a href="./page/koleksi.html">Koleksi</a></li>
-            <li><a href="./page/peminjaman.html">Peminjaman</a></li>
-          </ul>
+      <nav class="navbar">
+        <label for="nav-check-index" class="nav-toggle" aria-label="Buka menu navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
 
-          <ul class="nav-menu nav-menu-actions">
-            <li>
-              <button
-                type="button"
-                class="nav-icon-link"
-                id="btnNotif"
-                title="Notifikasi"
-                aria-label="Buka notifikasi"
-              >
-                <span class="nav-svg-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                    <path
-                      d="M320 64C306.7 64 296 74.7 296 88L296 97.7C214.6 109.3 152 179.4 152 264L152 278.5C152 316.2 142 353.2 123 385.8L101.1 423.2C97.8 429 96 435.5 96 442.2C96 463.1 112.9 480 133.8 480L506.2 480C527.1 480 544 463.1 544 442.2C544 435.5 542.2 428.9 538.9 423.2L517 385.7C498 353.1 488 316.1 488 278.4L488 263.9C488 179.3 425.4 109.2 344 97.6L344 87.9C344 74.6 333.3 63.9 320 63.9zM488.4 432L151.5 432L164.4 409.9C187.7 370 200 324.6 200 278.5L200 264C200 197.7 253.7 144 320 144C386.3 144 440 197.7 440 264L440 278.5C440 324.7 452.3 370 475.5 409.9L488.4 432zM252.1 528C262 556 288.7 576 320 576C351.3 576 378 556 387.9 528L252.1 528z"
-                    />
-                  </svg>
-                </span>
-                <span class="notif-badge" id="notifBadge">0</span>
-              </button>
-            </li>
+        <a href="index.html" class="logo">Perpustakaan Kampus</a>
 
-            <li>
-              <a
-                href="page/profile.html"
-                class="nav-icon-link"
-                title="Profile"
-                aria-label="Buka profile"
-              >
-                <span class="nav-svg-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                    <path
-                      d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112 562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z"
-                    />
-                  </svg>
-                </span>
+        <ul class="nav-menu nav-menu-main">
+          <li><a href="index.html" class="active">Beranda</a></li>
+          <li><a href="./page/koleksi.html">Koleksi</a></li>
+          <li><a href="./page/peminjaman.html">Peminjaman</a></li>
+        </ul>
+
+        <ul class="nav-menu nav-menu-actions">
+          <li>
+            <button type="button" class="nav-icon-link" id="btnNotif" title="Notifikasi" aria-label="Buka notifikasi">
+              <span class="nav-svg-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path
+                    d="M320 64C306.7 64 296 74.7 296 88L296 97.7C214.6 109.3 152 179.4 152 264L152 278.5C152 316.2 142 353.2 123 385.8L101.1 423.2C97.8 429 96 435.5 96 442.2C96 463.1 112.9 480 133.8 480L506.2 480C527.1 480 544 463.1 544 442.2C544 435.5 542.2 428.9 538.9 423.2L517 385.7C498 353.1 488 316.1 488 278.4L488 263.9C488 179.3 425.4 109.2 344 97.6L344 87.9C344 74.6 333.3 63.9 320 63.9zM488.4 432L151.5 432L164.4 409.9C187.7 370 200 324.6 200 278.5L200 264C200 197.7 253.7 144 320 144C386.3 144 440 197.7 440 264L440 278.5C440 324.7 452.3 370 475.5 409.9L488.4 432zM252.1 528C262 556 288.7 576 320 576C351.3 576 378 556 387.9 528L252.1 528z" />
+                </svg>
+              </span>
+              <span class="notif-badge" id="notifBadge">0</span>
+            </button>
+          </li>
+
+          <li>
+            <a href="page/profile.html" class="nav-icon-link" title="Profile" aria-label="Buka profile">
+              <span class="nav-svg-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path
+                    d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112 562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z" />
+                </svg>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="notif-overlay" id="notifOverlay"></div>
+
+  <section class="notif-popup" id="notifPopup" aria-label="Popup notifikasi">
+    <div class="notif-header">
+      <div>
+        <p class="notif-label">Notifikasi</p>
+        <h2>Notifikasi</h2>
+      </div>
+
+      <button type="button" id="btnRefreshNotif" class="notif-refresh" aria-label="Muat ulang notifikasi">
+        ↻
+      </button>
+    </div>
+
+    <div class="notif-tabs">
+      <button type="button" class="notif-tab active" data-filter="semua">
+        Semua
+      </button>
+
+      <button type="button" class="notif-tab" data-filter="belum">
+        Belum Dibaca
+      </button>
+    </div>
+
+    <!--  menampilkan notifikasi -->
+    <div class="notif-list" id="notifList">
+      <p class="notif-empty">Tidak ada notifikasi</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="hero-slider">
+      <div class="container">
+        <div class="slider-card">
+          <div class="slider-content">
+            <p class="slider-label">Perpustakaan Kampus</p>
+
+            <h1 id="sliderJudul">Selamat Datang di Perpustakaan Kampus</h1>
+
+            <p id="sliderDeskripsi">
+              Temukan buku akademik, teknologi, jurnal, dan bacaan pilihan
+              dengan lebih mudah.
+            </p>
+
+            <div class="slider-actions">
+              <a href="page/koleksi.html" class="btn-primary" id="sliderTombol">
+                Lihat Koleksi
               </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
 
-    <div class="notif-overlay" id="notifOverlay"></div>
+              <div class="slider-controls">
+                <button type="button" class="slider-control" id="sliderPrev" aria-label="Slide sebelumnya">
+                  ‹
+                </button>
 
-    <section class="notif-popup" id="notifPopup" aria-label="Popup notifikasi">
-      <div class="notif-header">
-        <div>
-          <p class="notif-label">Notifikasi</p>
-          <h2>Notifikasi</h2>
+                <button type="button" class="slider-control" id="sliderNext" aria-label="Slide berikutnya">
+                  ›
+                </button>
+              </div>
+            </div>
+
+            <div id="sliderIndikator" class="slider-dots"></div>
+          </div>
+
+          <div class="slider-image">
+            <img src="image/pemrograman web dasar.png" 
+            alt="Banner Perpustakaan Kampus" 
+            id="sliderGambar"
+            loading="lazy" />
+            />
+          </div>
         </div>
-
-        <button
-          type="button"
-          id="btnRefreshNotif"
-          class="notif-refresh"
-          aria-label="Muat ulang notifikasi"
-        >
-          ↻
-        </button>
-      </div>
-
-      <div class="notif-tabs">
-        <button type="button" class="notif-tab active" data-filter="semua">
-          Semua
-        </button>
-
-        <button type="button" class="notif-tab" data-filter="belum">
-          Belum Dibaca
-        </button>
-      </div>
-
-      <!--  menampilkan notifikasi -->
-      <div class="notif-list" id="notifList">
-        <p class="notif-empty">Tidak ada notifikasi</p>
       </div>
     </section>
 
-    <main>
-      <section class="hero-slider">
-        <div class="container">
-          <div class="slider-card">
-            <div class="slider-content">
-              <p class="slider-label">Perpustakaan Kampus</p>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-label">Cari Koleksi Buku</p>
 
-              <h1 id="sliderJudul">Selamat Datang di Perpustakaan Kampus</h1>
+          <h1>Temukan Buku yang Dibutuhkan dengan Lebih Mudah</h1>
 
-              <p id="sliderDeskripsi">
-                Temukan buku akademik, teknologi, jurnal, dan bacaan pilihan
-                dengan lebih mudah.
-              </p>
+          <p class="hero-text">
+            Gunakan pencarian dan kategori untuk menemukan buku yang sesuai
+            sebelum mengajukan peminjaman.
+          </p>
 
-              <div class="slider-actions">
-                <a
-                  href="page/koleksi.html"
-                  class="btn-primary"
-                  id="sliderTombol"
-                >
-                  Lihat Koleksi
-                </a>
+          <form class="search-box">
+            <input type="search" placeholder="Cari judul buku atau nama penulis..." />
+            <button type="submit">Cari</button>
+          </form>
 
-                <div class="slider-controls">
-                  <button
-                    type="button"
-                    class="slider-control"
-                    id="sliderPrev"
-                    aria-label="Slide sebelumnya"
-                  >
-                    ‹
-                  </button>
+          <div class="category-list">
+            <span class="category active">Semua</span>
+            <span class="category">Teknologi</span>
+            <span class="category">Akademik</span>
+            <span class="category">Desain</span>
+            <span class="category">Informatika</span>
+            <span class="category">Jurnal</span>
+            <span class="category">Non-Fiksi</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                  <button
-                    type="button"
-                    class="slider-control"
-                    id="sliderNext"
-                    aria-label="Slide berikutnya"
-                  >
-                    ›
-                  </button>
-                </div>
-              </div>
+    <section class="info-section">
+      <div class="container">
+        <div class="info-box">
+          <div class="info-text">
+            <p class="section-label">Informasi Singkat</p>
+            <h2>Layanan Perpustakaan Kampus</h2>
+            <p>
+              Website ini membantu mahasiswa melihat koleksi buku, membaca
+              ringkasan buku, mengajukan peminjaman, serta memantau status
+              peminjaman secara sederhana.
+            </p>
+          </div>
 
-              <div id="sliderIndikator" class="slider-dots"></div>
+          <div class="info-stats">
+            <div class="stat-item">
+              <h3>120+</h3>
+              <p>Total Buku</p>
             </div>
 
-            <div class="slider-image">
-              <img
-                src="image/pemrograman web dasar.png"
-                alt="Banner Perpustakaan Kampus"
-                id="sliderGambar"
-              />
+            <div class="stat-item">
+              <h3>84</h3>
+              <p>Tersedia</p>
+            </div>
+
+            <div class="stat-item">
+              <h3>36</h3>
+              <p>Dipinjam</p>
+            </div>
+
+            <div class="stat-item">
+              <h3>8</h3>
+              <p>Kategori</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="hero">
-        <div class="container">
-          <div class="hero-content">
-            <p class="hero-label">Cari Koleksi Buku</p>
+    <section class="book-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Koleksi Buku</p>
+            <h2>Buku Terbaru</h2>
+          </div>
 
-            <h1>Temukan Buku yang Dibutuhkan dengan Lebih Mudah</h1>
+          <a href="page/koleksi.html" class="section-link">Lihat Semua</a>
+        </div>
 
-            <p class="hero-text">
-              Gunakan pencarian dan kategori untuk menemukan buku yang sesuai
-              sebelum mengajukan peminjaman.
+        <!-- menampilkan data buku -->
+        <div class="book-grid" id="bookTerbaru"></div>
+      </div>
+    </section>
+
+    <section class="book-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Rekomendasi</p>
+            <h2>Pilihan Bacaan</h2>
+          </div>
+
+          <a href="page/koleksi.html" class="section-link">Lihat Semua</a>
+        </div>
+
+        <div class="book-grid" id="bookRekomendasi"></div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="container">
+        <div class="info-box">
+          <div class="info-text">
+            <h2>Kumpulkan EXP dari Aktivitas Membaca</h2>
+            <p>
+              Mahasiswa yang aktif meminjam buku dan mengunjungi perpustakaan
+              dapat memperoleh EXP. Setelah mencapai level tertentu, user
+              berkesempatan mengikuti program reward dari perpustakaan.
             </p>
 
-            <form class="search-box">
-              <input
-                type="search"
-                placeholder="Cari judul buku atau nama penulis..."
-              />
-              <button type="submit">Cari</button>
-            </form>
-
-            <div class="category-list">
-              <span class="category active">Semua</span>
-              <span class="category">Teknologi</span>
-              <span class="category">Akademik</span>
-              <span class="category">Desain</span>
-              <span class="category">Informatika</span>
-              <span class="category">Jurnal</span>
-              <span class="category">Non-Fiksi</span>
+            <div class="form-actions mt-16">
+              <a href="page/profile.html" class="btn-primary">Lihat Profile</a>
+              <a href="page/peminjaman.html" class="btn-secondary">
+                Ajukan Peminjaman
+              </a>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="info-section">
-        <div class="container">
-          <div class="info-box">
-            <div class="info-text">
-              <p class="section-label">Informasi Singkat</p>
-              <h2>Layanan Perpustakaan Kampus</h2>
-              <p>
-                Website ini membantu mahasiswa melihat koleksi buku, membaca
-                ringkasan buku, mengajukan peminjaman, serta memantau status
-                peminjaman secara sederhana.
-              </p>
+          <div class="info-stats">
+            <div class="stat-item">
+              <h3>+10</h3>
+              <p>EXP Peminjaman</p>
             </div>
 
-            <div class="info-stats">
-              <div class="stat-item">
-                <h3>120+</h3>
-                <p>Total Buku</p>
-              </div>
+            <div class="stat-item">
+              <h3>+20</h3>
+              <p>EXP Pengembalian</p>
+            </div>
 
-              <div class="stat-item">
-                <h3>84</h3>
-                <p>Tersedia</p>
-              </div>
+            <div class="stat-item">
+              <h3>+5</h3>
+              <p>EXP Kunjungan</p>
+            </div>
 
-              <div class="stat-item">
-                <h3>36</h3>
-                <p>Dipinjam</p>
-              </div>
-
-              <div class="stat-item">
-                <h3>8</h3>
-                <p>Kategori</p>
-              </div>
+            <div class="stat-item">
+              <h3>Lv.10</h3>
+              <p>Reward Aktif</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="book-section">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <p class="section-label">Koleksi Buku</p>
-              <h2>Buku Terbaru</h2>
-            </div>
-
-            <a href="page/koleksi.html" class="section-link">Lihat Semua</a>
-          </div>
-
-          <!-- menampilkan data buku -->
-          <div class="book-grid" id="bookTerbaru"></div>
-        </div>
-      </section>
-
-      <section class="book-section">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <p class="section-label">Rekomendasi</p>
-              <h2>Pilihan Bacaan</h2>
-            </div>
-
-            <a href="page/koleksi.html" class="section-link">Lihat Semua</a>
-          </div>
-
-          <div class="book-grid" id="bookRekomendasi"></div>
-        </div>
-      </section>
-
-      <section class="info-section">
-        <div class="container">
-          <div class="info-box">
-            <div class="info-text">
-              <h2>Kumpulkan EXP dari Aktivitas Membaca</h2>
-              <p>
-                Mahasiswa yang aktif meminjam buku dan mengunjungi perpustakaan
-                dapat memperoleh EXP. Setelah mencapai level tertentu, user
-                berkesempatan mengikuti program reward dari perpustakaan.
-              </p>
-
-              <div class="form-actions mt-16">
-                <a href="page/profile.html" class="btn-primary"
-                  >Lihat Profile</a
-                >
-                <a href="page/peminjaman.html" class="btn-secondary">
-                  Ajukan Peminjaman
-                </a>
-              </div>
-            </div>
-
-            <div class="info-stats">
-              <div class="stat-item">
-                <h3>+10</h3>
-                <p>EXP Peminjaman</p>
-              </div>
-
-              <div class="stat-item">
-                <h3>+20</h3>
-                <p>EXP Pengembalian</p>
-              </div>
-
-              <div class="stat-item">
-                <h3>+5</h3>
-                <p>EXP Kunjungan</p>
-              </div>
-
-              <div class="stat-item">
-                <h3>Lv.10</h3>
-                <p>Reward Aktif</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-content">
-        <div>
-          <h3>Perpustakaan Kampus</h3>
-          <p>
-            Website informasi koleksi buku, layanan peminjaman, dan aktivitas
-            perpustakaan kampus.
-          </p>
-        </div>
-
-        <div>
-          <p>Email: perpustakaan@kampus.ac.id</p>
-          <p>Telepon: (061) 1234567</p>
         </div>
       </div>
+    </section>
+  </main>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 Perpustakaan Kampus. Seluruh hak cipta dilindungi.</p>
+<!-- Website informasi koleksi buku, layanan peminjaman, serta aktivitas perpustakaan kampus. -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Perpustakaan Kampus</h3>
+        <p>
+          Website informasi koleksi buku, layanan peminjaman, dan aktivitas
+          perpustakaan kampus.
+        </p>
       </div>
-    </footer>
 
-    <script src="js/data.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+      <div>
+        <p>Email: perpustakaan@kampus.ac.id</p>
+        <p>Telepon: (061) 1234567</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Perpustakaan Kampus. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
 </html>
