@@ -268,7 +268,7 @@ Setelah reload, sistem akan mengambil ulang data awal dari file `data.js`.
 
 Sistem ini masih berbasis frontend. Artinya, data belum tersimpan ke database asli dan belum memiliki backend. Namun, alur yang dibuat sudah menggambarkan proses dasar dari sistem perpustakaan digital, mulai dari login, peminjaman, pengembalian, review, EXP, notifikasi, sampai riwayat peminjaman.
 
-Jika dikembangkan lebih lanjut, sistem ini dapat ditambahkan backend, database, role admin, dashboard petugas, dan laporan peminjaman.
+Pada pembaruan terakhir, sistem sudah dilengkapi dengan notifikasi agar user dapat melihat informasi penting terkait aktivitas peminjaman, pengembalian, dan review. Aturan peminjaman juga tetap disediakan sebagai informasi pendukung, namun tidak dibuat sebagai halaman terpisah.Jika dikembangkan lebih lanjut, sistem ini dapat ditambahkan backend, database, role admin, dashboard petugas, dan laporan peminjaman.
 
 ---
 
